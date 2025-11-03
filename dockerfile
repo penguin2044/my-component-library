@@ -1,25 +1,38 @@
-# Stage 1 — Build React app and Storybook
-FROM node:20 as builder
+# Multi-stage build for optimized production image
+# Stage 1: Build the React application
+FROM node:18-alpine AS build
 
-WORKDIR /kleinschmit_jesse_ui_garden
+# Set working directory with required naming convention
+WORKDIR /app/kleinschmit_jesse_ui_garden_build_checks
 
+# Copy package files
 COPY package*.json ./
-RUN npm ci --silent
 
+# Install dependencies
+RUN npm ci --legacy-peer-deps
+
+# Copy all source files
 COPY . .
 
-# Build the React app and Storybook
+# Build the production-ready app
 RUN npm run build
-RUN npm run build-storybook
 
-# Stage 2 — Serve both builds with nginx
-FROM nginx:stable-alpine
+# Stage 2: Serve the application with nginx
+FROM nginx:alpine
 
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+# Copy the build output from stage 1
+COPY --from=build /app/kleinschmit_jesse_ui_garden_build_checks/build /usr/share/nginx/html
 
-# Copy both apps into nginx web root
-COPY --from=builder /kleinschmit_jesse_ui_garden/build /usr/share/nginx/html
-COPY --from=builder /kleinschmit_jesse_ui_garden/storybook-static /usr/share/nginx/html/storybook
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 8083
+# Expose port 80 (will be mapped to 8018 on host)
+EXPOSE 80
+
+# Add metadata labels
+LABEL maintainer="jesse.kleinschmit@example.com"
+LABEL description="UC Component Library - Assignment 13"
+LABEL version="1.0"
+
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]

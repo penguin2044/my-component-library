@@ -1,36 +1,9 @@
 {
   "extends": [
     "react-app",
-    "react-app/jest",
-    "plugin:prettier/recommended"
+    "react-app/jest"
   ],
-  "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "react/react-in-jsx-scope": "off"
   }
 }
-```
-
-4. **Save it** (Ctrl + S)
-
----
-
-### File 4: `.eslintignore`
-
-1. Right-click → **"New File"**
-2. Name it: `.eslintignore`
-3. Paste this content:
-```
-node_modules/
-build/
-dist/
-coverage/
-.storybook/
-storybook-static/
