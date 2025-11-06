@@ -1,29 +1,31 @@
-# Jesse Kleinschmit - Assignment 12: Component Library
+# Assignment 13 - Component Library with Code Quality Checks
 
----
+**Student:** Jesse Kleinschmit
+**Date:** November 2, 2025
+**Course:** Business System and Testing
 
-How to Run
+## GitHub Repository
+https://github.com/penguin2044/my-component-library
 
-clone files from git
+## Docker Instructions
 
-git clone https://github.com/penguin2044/Jesse_Kleinschmit_ui_garden.git
-
-Build the Docker Image
-
-Run this command from the root of the project (where the Dockerfile is):
-
-docker build -t kleinschmit_jesse_coding_assignment12 .
-
-then run: docker run -d --name kleinschmit_jesse_coding_assignment12 -p 127.0.0.1:8083:8083 kleinschmit_jesse_coding_assignment12
-
-links to both react app and story book
-
-Open in Your Browser
-
-React App: http://127.0.0.1:8083
-
-Storybook: http://127.0.0.1:8083/storybook
-
+### Build
+```bash
+docker build -t kleinschmit_jesse_coding_assignment13 .
 ```
 
+### Run
+```bash
+docker run -d -p 8018:80 --name kleinschmit_jesse_coding_assignment13 kleinschmit_jesse_coding_assignment13
 ```
+
+### Access
+http://localhost:8018 or http://127.0.0.1:8018
+
+## Features Implemented
+- ✅ Husky pre-commit hooks
+- ✅ Prettier code formatting
+- ✅ ESLint code quality checks
+- ✅ Automated tests
+- ✅ GitHub Actions CI/CD
+- ✅ Docker containerization on port 8018
