@@ -31,5 +31,4 @@ EXPOSE 80
 # Add metadata labels
 LABEL description="UC Component Library - Assignment 13"
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"
