@@ -1,4 +1,3 @@
-# Multi-stage build for optimized production image
 # Stage 1: Build the React application
 FROM node:18-alpine AS build
 
@@ -30,9 +29,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 
 # Add metadata labels
-LABEL maintainer="jesse.kleinschmit@example.com"
 LABEL description="UC Component Library - Assignment 13"
-LABEL version="1.0"
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
