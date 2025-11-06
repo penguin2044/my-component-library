@@ -24,4 +24,3 @@ function App() {
 }
 
 export default App;
-const test=1;const   bad   =   2;
