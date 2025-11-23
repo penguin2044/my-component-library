@@ -1,0 +1,59 @@
+.devsetup-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.setup-section {
+  margin: 50px 0;
+}
+
+.setup-details,
+.workflow-details {
+  margin-top: 30px;
+}
+
+.setup-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+}
+
+.extension-list,
+.workflow-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.interactive-setup {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 2px solid #e0e0e0;
+}
+
+.setup-item {
+  margin: 25px 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .devsetup-container {
+    padding: 20px 15px;
+  }
+  
+  .setup-card,
+  .interactive-setup {
+    padding: 20px;
+  }
+}

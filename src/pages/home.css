@@ -1,0 +1,57 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-extra {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  margin-bottom: 60px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.about-section,
+.skills-section {
+  margin: 60px 0;
+}
+
+.cards-grid,
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons,
+  .contact-buttons {
+    flex-direction: column;
+  }
+  
+  .cards-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

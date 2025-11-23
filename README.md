@@ -1,31 +1,52 @@
-# Assignment 13 - Component Library with Code Quality Checks
+# Jesse Kleinschmit - Portfolio Website
 
-**Student:** Jesse Kleinschmit
-**Date:** November 2, 2025
-**Course:** Business System and Testing
+Assignment 14: Building a Portfolio Website
+Full Stack Web Development Program
+Red River College Polytech
 
-## GitHub Repository
-https://github.com/penguin2044/my-component-library
+**GitHub Repository:** https://github.com/penguin2044/my-component-library
 
-## Docker Instructions
+---
+
+## Getting Started
+
+### Clone Repository
+```bash
+git clone https://github.com/penguin2044/my-component-library.git
+cd my-component-library
+```
+
+---
+
+## Run with Docker
 
 ### Build
 ```bash
-docker build -t kleinschmit_jesse_coding_assignment13 .
+docker build -t kleinschmit_jesse_coding_assignment14 .
 ```
 
 ### Run
 ```bash
-docker run -d -p 8018:80 --name kleinschmit_jesse_coding_assignment13 kleinschmit_jesse_coding_assignment13
+docker run -d -p 5575:80 --name kleinschmit_jesse_coding_assignment14 kleinschmit_jesse_coding_assignment14
 ```
 
 ### Access
-http://localhost:8018 or http://127.0.0.1:8018
 
-## Features Implemented
-- ✅ Husky pre-commit hooks
-- ✅ Prettier code formatting
-- ✅ ESLint code quality checks
-- ✅ Automated tests
-- ✅ GitHub Actions CI/CD
-- ✅ Docker containerization on port 8018
+Open browser: http://localhost:5575
+
+---
+
+## Stop Container
+```bash
+docker stop kleinschmit_jesse_coding_assignment14
+docker rm kleinschmit_jesse_coding_assignment14
+```
+
+---
+
+## Assignment Requirements
+
+- Container name: kleinschmit_jesse_coding_assignment14
+- Working directory: kleinschmit_jesse_final_site
+- Port: 5575
+- Includes all 5 required sections: Home, Work, Skills, Resources, Dev Setup
